@@ -3,23 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>블로그 포스팅 테스트 | NomadEQ</title>
+    <title>Tag: swift | NomadEQ</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="" />
-    
-    <meta name="description" content="내용도 테스트">
-<meta property="og:type" content="article">
-<meta property="og:title" content="블로그 포스팅 테스트">
-<meta property="og:url" content="https://nomad-eq.github.io/2018/01/14/thinking-first/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="NomadEQ">
+<meta property="og:url" content="https://nomad-eq.github.io/tags/swift/index.html">
 <meta property="og:site_name" content="NomadEQ">
-<meta property="og:description" content="내용도 테스트">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-14T05:53:38.455Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="블로그 포스팅 테스트">
-<meta name="twitter:description" content="내용도 테스트">
+<meta name="twitter:title" content="NomadEQ">
     
 
     
@@ -73,7 +67,7 @@
                                     <a class="main-nav-list-link" href="/">Home</a>
                                 </li>
                             
-                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Thinking/">Thinking</a></li></ul>
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/">Dev</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Dev/iOS/">iOS</a></li></ul></li></ul>
                                     
                         </ul>
                         <nav id="sub-nav">
@@ -128,118 +122,59 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Thinking/">Thinking</a>
+    <i class="icon fa fa-tag"></i>Tag: <em>swift</em>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-thinking-first" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/iOS/">iOS</a>
+            </div>
+            <div class="date"><time datetime="2018-01-27T12:32:33.000Z" itemprop="datePublished">2018-01-27</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        블로그 포스팅 테스트
+        <a href="/2018/01/27/scrollview-delegate-tableview/">UIScrollViewDelegate이 UITableView의 스크롤에 반응할 때</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2018/01/14/thinking-first/" class="article-date">
-            <time datetime="2018-01-14T05:41:10.000Z" itemprop="datePublished">2018-01-14</time>
-        </a>
-    </div>
+        <p class="article-excerpt">
+            Problem
+화면 상단에 UIScrollView를 이용하여 Horizontal Paging을 구현
+currentPage에 따른 처리를 위해 UIScrollViewDelegate의 scrollViewDidScroll:을 구현
+하단에 UITableView의 스크롤시 위의 Delegate이 호출됨
 
-                
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <p>내용도 테스트</p>
-
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="https://nomad-eq.github.io/2018/01/14/thinking-first/" data-id="cjced8ilz00012l7lljpr9jua" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+Solve123456func scrollViewDidScrol
+        </p>
     </div>
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        </div>
     
-    </section>
+
+
+    </div></section>
+
 
 
                         </div>
@@ -269,19 +204,6 @@
         </ul>
     </div>
     
-        
-<nav id="article-nav">
-    
-    
-        <a href="/2018/01/10/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">older</strong>
-        <p class="article-nav-title">Hello World</p>
-        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
-        </a>
-    
-</nav>
-
-    
     <div class="widgets-container">
         
             
@@ -294,18 +216,9 @@
                     <li>
                         
                         <div class="item-inner">
-                            <p class="item-category"><a class="article-category-link" href="/categories/Thinking/">Thinking</a></p>
-                            <p class="item-title"><a href="/2018/01/14/thinking-first/" class="title">블로그 포스팅 테스트</a></p>
-                            <p class="item-date"><time datetime="2018-01-14T05:41:10.000Z" itemprop="datePublished">2018-01-14</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/01/10/hello-world/" class="title">Hello World</a></p>
-                            <p class="item-date"><time datetime="2018-01-10T12:31:27.108Z" itemprop="datePublished">2018-01-10</time></p>
+                            <p class="item-category"><a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/iOS/">iOS</a></p>
+                            <p class="item-title"><a href="/2018/01/27/scrollview-delegate-tableview/" class="title">UIScrollViewDelegate이 UITableView의 스크롤에 반응할 때</a></p>
+                            <p class="item-date"><time datetime="2018-01-27T12:32:33.000Z" itemprop="datePublished">2018-01-27</time></p>
                         </div>
                     </li>
                 
@@ -318,7 +231,7 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">categories</h3>
         <div class="widget">
-            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Thinking/">Thinking</a><span class="category-list-count">1</span></li></ul>
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Dev/">Dev</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Dev/iOS/">iOS</a><span class="category-list-count">1</span></li></ul></li></ul>
         </div>
     </div>
 
@@ -328,16 +241,30 @@
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/01/">January 2018</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
 
             
                 
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">tags</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/UIScrollView/">UIScrollView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UITableView/">UITableView</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iOS/">iOS</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a><span class="tag-list-count">1</span></li></ul>
+        </div>
+    </div>
+
 
             
                 
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/UIScrollView/" style="font-size: 10px;">UIScrollView</a> <a href="/tags/UITableView/" style="font-size: 10px;">UITableView</a> <a href="/tags/iOS/" style="font-size: 10px;">iOS</a> <a href="/tags/swift/" style="font-size: 10px;">swift</a>
+        </div>
+    </div>
+
 
             
                 
@@ -379,16 +306,14 @@
         
     
     <script>
-    var disqus_shortname = 'hexo-theme-hueman';
+    var disqus_shortname = 'nomadeq';
     
-    
-    var disqus_url = 'https://nomad-eq.github.io/2018/01/14/thinking-first/';
     
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>
