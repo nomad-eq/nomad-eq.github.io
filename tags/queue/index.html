@@ -3,24 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>UIScrollViewDelegate이 UITableView의 스크롤에 반응할 때 | NomadEQ</title>
+    <title>Tag: queue | NomadEQ</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="swift,iOS,UIScrollView,UITableView" />
-    
-    <meta name="description" content="Problem 화면 상단에 UIScrollView를 이용하여 Horizontal Paging을 구현 currentPage에 따른 처리를 위해 UIScrollViewDelegate의 scrollViewDidScroll:을 구현 하단에 UITableView의 스크롤시 위의 Delegate이 호출됨  Solve123456func scrollViewDidScrol">
-<meta name="keywords" content="swift,iOS,UIScrollView,UITableView">
-<meta property="og:type" content="article">
-<meta property="og:title" content="UIScrollViewDelegate이 UITableView의 스크롤에 반응할 때">
-<meta property="og:url" content="https://nomad-eq.github.io/2018/01/27/scrollview-delegate-tableview/index.html">
+    <meta property="og:type" content="website">
+<meta property="og:title" content="NomadEQ">
+<meta property="og:url" content="https://nomad-eq.github.io/tags/queue/index.html">
 <meta property="og:site_name" content="NomadEQ">
-<meta property="og:description" content="Problem 화면 상단에 UIScrollView를 이용하여 Horizontal Paging을 구현 currentPage에 따른 처리를 위해 UIScrollViewDelegate의 scrollViewDidScroll:을 구현 하단에 UITableView의 스크롤시 위의 Delegate이 호출됨  Solve123456func scrollViewDidScrol">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-28T05:10:19.797Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UIScrollViewDelegate이 UITableView의 스크롤에 반응할 때">
-<meta name="twitter:description" content="Problem 화면 상단에 UIScrollView를 이용하여 Horizontal Paging을 구현 currentPage에 따른 처리를 위해 UIScrollViewDelegate의 scrollViewDidScroll:을 구현 하단에 UITableView의 스크롤시 위의 Delegate이 호출됨  Solve123456func scrollViewDidScrol">
+<meta name="twitter:title" content="NomadEQ">
     
 
     
@@ -129,133 +122,59 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/iOS/">iOS</a>
+    <i class="icon fa fa-tag"></i>Tag: <em>queue</em>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-scrollview-delegate-tableview" class="article article-single article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
+                            
+
+    
+    
         
-            <header class="article-header">
-                
+        
+        <section class="archives-wrap">
+            <div class="archive-year-wrap">
+                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
+            </div>
+            <div class="archives">
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <div class="article-meta">
+            <div class="category">
+            <a class="article-category-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Dev/Algorithm/">Algorithm</a>
+            </div>
+            <div class="date"><time datetime="2018-01-28T05:20:46.000Z" itemprop="datePublished">2018-01-28</time></div>
+        </div>
+        
     
         <h1 class="article-title" itemprop="name">
-        UIScrollViewDelegate이 UITableView의 스크롤에 반응할 때
+        <a href="/2018/01/28/algorithm-queue/">Queue</a>
         </h1>
     
 
-            </header>
-        
-        
-            <div class="article-meta">
-                
-    <div class="article-date">
-        <a href="/2018/01/27/scrollview-delegate-tableview/" class="article-date">
-            <time datetime="2018-01-27T12:32:33.000Z" itemprop="datePublished">2018-01-27</time>
-        </a>
-    </div>
+        <p class="article-excerpt">
+            Concept
+FIFO(First-In-First-Out)
+Enqueue : O(1), Swift의 배열은 항상 여분의 공간을 뒤쪽에 가지고 있음
+Dequeue : O(n)
 
-                
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/UIScrollView/">UIScrollView</a>, <a class="tag-link" href="/tags/UITableView/">UITableView</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>, <a class="tag-link" href="/tags/swift/">swift</a>
-    </div>
-
-            </div>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-            <h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li>화면 상단에 UIScrollView를 이용하여 Horizontal Paging을 구현</li>
-<li>currentPage에 따른 처리를 위해 UIScrollViewDelegate의 scrollViewDidScroll:을 구현</li>
-<li>하단에 UITableView의 스크롤시 위의 Delegate이 호출됨</li>
-</ul>
-<h3 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scrollViewDidScroll</span><span class="params">(<span class="number">_</span> scrollView: UIScrollView)</span></span> &#123;</span><br><span class="line">  <span class="keyword">if</span> scrollView <span class="keyword">is</span> <span class="type">UITableView</span> &#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 필요한 처리</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>class UITableView: UIScrollView</strong>, NSCoding, UIDataSourceTranslating</li>
-<li><strong>protocol UITableViewDelegate:</strong> NSObjectProtocol, <strong>UIScrollViewDelegate</strong></li>
-<li>UITableView는 UIScrollView를 상속받고, UITableVIewDelegate은 UIScrollViewDelegate를 상속받기 때문에 <strong>tableView.delegate = self</strong> 또한 영향을 받음</li>
-</ul>
-
-        </div>
-        <footer class="article-footer">
-            
-
-
-
-    <a data-url="https://nomad-eq.github.io/2018/01/27/scrollview-delegate-tableview/" data-id="cjcydeydu0001sd7lthzx81gx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-        </footer>
+Code123456789101112131415161718192021222324252627public struct Queue&lt;T&gt; &#123;  fileprivate var 
+        </p>
     </div>
 </article>
-
-    <section id="comments">
     
-        
-    <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-
+        </div>
     
-    </section>
+
+
+    </div></section>
+
 
 
                         </div>
@@ -284,23 +203,6 @@
             
         </ul>
     </div>
-    
-        
-<nav id="article-nav">
-    
-        <a href="/2018/01/28/algorithm-stack/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Stack
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
-    
-    
-</nav>
-
     
     <div class="widgets-container">
         
@@ -425,13 +327,11 @@
     var disqus_shortname = 'nomadeq';
     
     
-    var disqus_url = 'https://nomad-eq.github.io/2018/01/27/scrollview-delegate-tableview/';
-    
     (function() {
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
     </script>

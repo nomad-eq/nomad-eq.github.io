@@ -3,24 +3,24 @@
 <head>
     <meta charset="utf-8">
     
-    <title>UIScrollViewDelegate이 UITableView의 스크롤에 반응할 때 | NomadEQ</title>
+    <title>Queue | NomadEQ</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="swift,iOS,UIScrollView,UITableView" />
+        <meta name="keywords" content="algorithm,swift,queue" />
     
-    <meta name="description" content="Problem 화면 상단에 UIScrollView를 이용하여 Horizontal Paging을 구현 currentPage에 따른 처리를 위해 UIScrollViewDelegate의 scrollViewDidScroll:을 구현 하단에 UITableView의 스크롤시 위의 Delegate이 호출됨  Solve123456func scrollViewDidScrol">
-<meta name="keywords" content="swift,iOS,UIScrollView,UITableView">
+    <meta name="description" content="Concept FIFO(First-In-First-Out) Enqueue : O(1), Swift의 배열은 항상 여분의 공간을 뒤쪽에 가지고 있음 Dequeue : O(n)  Code123456789101112131415161718192021222324252627public struct Queue&amp;lt;T&amp;gt; &amp;#123;  fileprivate var">
+<meta name="keywords" content="algorithm,swift,queue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UIScrollViewDelegate이 UITableView의 스크롤에 반응할 때">
-<meta property="og:url" content="https://nomad-eq.github.io/2018/01/27/scrollview-delegate-tableview/index.html">
+<meta property="og:title" content="Queue">
+<meta property="og:url" content="https://nomad-eq.github.io/2018/01/28/algorithm-queue/index.html">
 <meta property="og:site_name" content="NomadEQ">
-<meta property="og:description" content="Problem 화면 상단에 UIScrollView를 이용하여 Horizontal Paging을 구현 currentPage에 따른 처리를 위해 UIScrollViewDelegate의 scrollViewDidScroll:을 구현 하단에 UITableView의 스크롤시 위의 Delegate이 호출됨  Solve123456func scrollViewDidScrol">
+<meta property="og:description" content="Concept FIFO(First-In-First-Out) Enqueue : O(1), Swift의 배열은 항상 여분의 공간을 뒤쪽에 가지고 있음 Dequeue : O(n)  Code123456789101112131415161718192021222324252627public struct Queue&amp;lt;T&amp;gt; &amp;#123;  fileprivate var">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-01-28T05:10:19.797Z">
+<meta property="og:updated_time" content="2018-01-28T06:00:47.508Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UIScrollViewDelegate이 UITableView의 스크롤에 반응할 때">
-<meta name="twitter:description" content="Problem 화면 상단에 UIScrollView를 이용하여 Horizontal Paging을 구현 currentPage에 따른 처리를 위해 UIScrollViewDelegate의 scrollViewDidScroll:을 구현 하단에 UITableView의 스크롤시 위의 Delegate이 호출됨  Solve123456func scrollViewDidScrol">
+<meta name="twitter:title" content="Queue">
+<meta name="twitter:description" content="Concept FIFO(First-In-First-Out) Enqueue : O(1), Swift의 배열은 항상 여분의 공간을 뒤쪽에 가지고 있음 Dequeue : O(n)  Code123456789101112131415161718192021222324252627public struct Queue&amp;lt;T&amp;gt; &amp;#123;  fileprivate var">
     
 
     
@@ -129,18 +129,18 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/iOS/">iOS</a>
+    <a class="page-title-link" href="/categories/Dev/">Dev</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Dev/Algorithm/">Algorithm</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-scrollview-delegate-tableview" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-algorithm-queue" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        UIScrollViewDelegate이 UITableView의 스크롤에 반응할 때
+        Queue
         </h1>
     
 
@@ -150,32 +150,34 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2018/01/27/scrollview-delegate-tableview/" class="article-date">
-            <time datetime="2018-01-27T12:32:33.000Z" itemprop="datePublished">2018-01-27</time>
+        <a href="/2018/01/28/algorithm-queue/" class="article-date">
+            <time datetime="2018-01-28T05:20:46.000Z" itemprop="datePublished">2018-01-28</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/UIScrollView/">UIScrollView</a>, <a class="tag-link" href="/tags/UITableView/">UITableView</a>, <a class="tag-link" href="/tags/iOS/">iOS</a>, <a class="tag-link" href="/tags/swift/">swift</a>
+        <a class="tag-link" href="/tags/algorithm/">algorithm</a>, <a class="tag-link" href="/tags/queue/">queue</a>, <a class="tag-link" href="/tags/swift/">swift</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><ul>
-<li>화면 상단에 UIScrollView를 이용하여 Horizontal Paging을 구현</li>
-<li>currentPage에 따른 처리를 위해 UIScrollViewDelegate의 scrollViewDidScroll:을 구현</li>
-<li>하단에 UITableView의 스크롤시 위의 Delegate이 호출됨</li>
+            <h3 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h3><ul>
+<li><strong>FIFO(First-In-First-Out)</strong></li>
+<li><strong>Enqueue : O(1)</strong>, Swift의 배열은 항상 여분의 공간을 뒤쪽에 가지고 있음</li>
+<li><strong>Dequeue : O(n)</strong></li>
 </ul>
-<h3 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">scrollViewDidScroll</span><span class="params">(<span class="number">_</span> scrollView: UIScrollView)</span></span> &#123;</span><br><span class="line">  <span class="keyword">if</span> scrollView <span class="keyword">is</span> <span class="type">UITableView</span> &#123;</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 필요한 처리</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>class UITableView: UIScrollView</strong>, NSCoding, UIDataSourceTranslating</li>
-<li><strong>protocol UITableViewDelegate:</strong> NSObjectProtocol, <strong>UIScrollViewDelegate</strong></li>
-<li>UITableView는 UIScrollView를 상속받고, UITableVIewDelegate은 UIScrollViewDelegate를 상속받기 때문에 <strong>tableView.delegate = self</strong> 또한 영향을 받음</li>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">struct</span> <span class="title">Queue</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">fileprivate</span> <span class="keyword">var</span> array = [<span class="type">T</span>]()</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">var</span> isEmpty: <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> array.isEmpty</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">var</span> <span class="built_in">count</span>: <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> array.<span class="built_in">count</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">enqueue</span><span class="params">(<span class="number">_</span> element: T)</span></span> &#123;</span><br><span class="line">    array.append(element)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">dequeue</span><span class="params">()</span></span> -&gt; <span class="type">T</span>? &#123;</span><br><span class="line">    <span class="keyword">if</span> isEmpty &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> array.removeFirst()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">var</span> front: <span class="type">T</span>? &#123;</span><br><span class="line">    <span class="keyword">return</span> array.first</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="A-more-efficient-queue"><a href="#A-more-efficient-queue" class="headerlink" title="A more efficient queue"></a>A more efficient queue</h3><ul>
+<li>앞 쪽에도 여분의 공간을 둠 (head 위치를 위한 변수를 사용)</li>
+<li>특정 조건에서 필요 시 Trim 수행 (앞쪽에 비어있는 공간을 제거)</li>
+<li><strong>Dequeue : 평균적으로 O(1)</strong></li>
+<li>자세한 내용은 <a href="https://github.com/raywenderlich/swift-algorithm-club/tree/master/Queue" target="_blank" rel="noopener">https://github.com/raywenderlich/swift-algorithm-club/tree/master/Queue</a></li>
 </ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">struct</span> <span class="title">Queue</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">  <span class="keyword">fileprivate</span> <span class="keyword">var</span> array = [<span class="type">T</span>?]()</span><br><span class="line">  <span class="keyword">fileprivate</span> <span class="keyword">var</span> head = <span class="number">0</span></span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">var</span> isEmpty: <span class="type">Bool</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">count</span> == <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">var</span> <span class="built_in">count</span>: <span class="type">Int</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> array.<span class="built_in">count</span> - head</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">enqueue</span><span class="params">(<span class="number">_</span> element: T)</span></span> &#123;</span><br><span class="line">    array.append(element)</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">mutating</span> <span class="function"><span class="keyword">func</span> <span class="title">dequeue</span><span class="params">()</span></span> -&gt; <span class="type">T</span>? &#123;</span><br><span class="line">    <span class="keyword">guard</span> head &lt; array.<span class="built_in">count</span>, <span class="keyword">let</span> element = array[head] <span class="keyword">else</span> &#123; <span class="keyword">return</span> <span class="literal">nil</span> &#125;</span><br><span class="line"></span><br><span class="line">    array[head] = <span class="literal">nil</span></span><br><span class="line">    head += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> percentage = <span class="type">Double</span>(head)/<span class="type">Double</span>(array.<span class="built_in">count</span>)</span><br><span class="line">    <span class="keyword">if</span> array.<span class="built_in">count</span> &gt; <span class="number">50</span> &amp;&amp; percentage &gt; <span class="number">0.25</span> &#123;</span><br><span class="line">      array.removeFirst(head)</span><br><span class="line">      head = <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> element</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">var</span> front: <span class="type">T</span>? &#123;</span><br><span class="line">    <span class="keyword">if</span> isEmpty &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> array[head]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
         </div>
         <footer class="article-footer">
@@ -183,7 +185,7 @@
 
 
 
-    <a data-url="https://nomad-eq.github.io/2018/01/27/scrollview-delegate-tableview/" data-id="cjcydeydu0001sd7lthzx81gx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://nomad-eq.github.io/2018/01/28/algorithm-queue/" data-id="cjcydmqbb0000ug7lptxiqdd9" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -288,16 +290,12 @@
         
 <nav id="article-nav">
     
-        <a href="/2018/01/28/algorithm-stack/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">newer</strong>
-        <p class="article-nav-title">
-        
-            Stack
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
+        <a href="/2018/01/28/algorithm-stack/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Stack</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
     
 </nav>
 
@@ -425,7 +423,7 @@
     var disqus_shortname = 'nomadeq';
     
     
-    var disqus_url = 'https://nomad-eq.github.io/2018/01/27/scrollview-delegate-tableview/';
+    var disqus_url = 'https://nomad-eq.github.io/2018/01/28/algorithm-queue/';
     
     (function() {
     var dsq = document.createElement('script');
